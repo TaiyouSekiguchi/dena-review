@@ -1,0 +1,4 @@
+yonmoku
+*.o
+libft/libft.a
+error_malloc
