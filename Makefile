@@ -6,7 +6,7 @@
 #    By: tsekiguc <tsekiguc@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 17:08:25 by tsekiguc          #+#    #+#              #
-#    Updated: 2021/12/14 09:12:11 by tsekiguc         ###   ########.fr        #
+#    Updated: 2021/12/14 09:27:46 by tsekiguc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ vpath %.c srcs
 all				:	$(YONMOKU)
 
 $(YONMOKU)		:	$(OBJS)
-#					make -C libft
+					make -C libft
 					$(CC) $(OBJS) $(CFLAGS) $(LIBFT) -o $@
 
 $(OBJS_DIR)/%.o	:	%.c
@@ -52,11 +52,11 @@ $(OBJS_DIR)/%.o	:	%.c
 					$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean			:
-#					make clean -C libft
+					make clean -C libft
 					$(RM) $(OBJS)
 
 fclean			:
-#					make fclean -C libft
+					make fclean -C libft
 					$(RM) $(OBJS) $(YONMOKU) 
 
 re				:	fclean all
