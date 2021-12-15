@@ -6,7 +6,7 @@
 /*   By: tsekiguc <tsekiguc@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:47:49 by tsekiguc          #+#    #+#             */
-/*   Updated: 2021/12/12 17:31:54 by tsekiguc         ###   ########.fr       */
+/*   Updated: 2021/12/15 10:39:29 by tsekiguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	row_lane_check(char	***board, int row, int col, char stone)
 {
 	int		stone_cnt;
 
-	if (ROW - row < 4)
+	if (ROW - row < CLEAR_NUM)
 		return (0);
 	stone_cnt = 0;
 	while (row < ROW)
@@ -24,7 +24,7 @@ static int	row_lane_check(char	***board, int row, int col, char stone)
 		if ((*board)[row][col] != stone)
 			return (0);
 		stone_cnt++;
-		if (stone_cnt == 4)
+		if (stone_cnt == CLEAR_NUM)
 			return (1);
 		row++;
 	}
@@ -35,7 +35,7 @@ static int	col_lane_check(char	***board, int row, int col, char stone)
 {
 	int		stone_cnt;
 
-	if (COL - col < 4)
+	if (COL - col < CLEAR_NUM)
 		return (0);
 	stone_cnt = 0;
 	while (col < COL)
@@ -43,7 +43,7 @@ static int	col_lane_check(char	***board, int row, int col, char stone)
 		if ((*board)[row][col] != stone)
 			return (0);
 		stone_cnt++;
-		if (stone_cnt == 4)
+		if (stone_cnt == CLEAR_NUM)
 			return (1);
 		col++;
 	}
@@ -54,8 +54,8 @@ static int	diagonal_check_1(char	***board, int row, int col, char stone)
 {
 	int		stone_cnt;
 
-	if (ROW - row < 4
-		|| COL - col < 4)
+	if (ROW - row < CLEAR_NUM
+		|| COL - col < CLEAR_NUM)
 		return (0);
 	stone_cnt = 0;
 	while (row < ROW && col < COL)
@@ -63,7 +63,7 @@ static int	diagonal_check_1(char	***board, int row, int col, char stone)
 		if ((*board)[row][col] != stone)
 			return (0);
 		stone_cnt++;
-		if (stone_cnt == 4)
+		if (stone_cnt == CLEAR_NUM)
 			return (1);
 		row++;
 		col++;
@@ -76,7 +76,7 @@ static int	diagonal_check_2(char	***board, int row, int col, char stone)
 	int		stone_cnt;
 
 	if (row < 3
-		|| COL - col < 4)
+		|| COL - col < CLEAR_NUM)
 		return (0);
 	stone_cnt = 0;
 	while (row >= 0 && col < COL)
@@ -84,7 +84,7 @@ static int	diagonal_check_2(char	***board, int row, int col, char stone)
 		if ((*board)[row][col] != stone)
 			return (0);
 		stone_cnt++;
-		if (stone_cnt == 4)
+		if (stone_cnt == CLEAR_NUM)
 			return (1);
 		row--;
 		col++;

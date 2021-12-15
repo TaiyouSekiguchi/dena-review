@@ -6,7 +6,7 @@
 /*   By: tsekiguc <tsekiguc@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 10:01:29 by tsekiguc          #+#    #+#             */
-/*   Updated: 2021/12/12 20:16:35 by tsekiguc         ###   ########.fr       */
+/*   Updated: 2021/12/15 10:38:42 by tsekiguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef enum e_board
 {
 	ROW = 6,
 	COL = 7,
+	CLEAR_NUM = 4,
 }			t_board;
 
 typedef enum e_return
