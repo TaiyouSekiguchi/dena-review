@@ -21,7 +21,7 @@ git clone git@github.com:sunix2019/so_long.git
 
 git clone が成功したら、リポジトリの中で、"make"とコマンドを入力してください。   
 
-```shell
+```
 cd yonmoku
 make
 ```
