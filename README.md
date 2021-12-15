@@ -15,7 +15,7 @@
 
 リポジトリをgit clone してください。
 
-```shell
+```
 git clone git@github.com:sunix2019/so_long.git
 ```
 
